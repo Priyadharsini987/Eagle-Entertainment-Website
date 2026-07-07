@@ -487,9 +487,10 @@ const GalleryTab = () => {
             </div>
             <div className="form-group">
               <label>Category</label>
-              <select value={form.category} onChange={e => setForm(f=>({...f,category:e.target.value}))}>
-                {['CORPORATE','AWARDS','CELEBRITY','CONCERT','LAUNCH','FASHION'].map(c=><option key={c}>{c}</option>)}
-              </select>
+              <input list="galleryCategoriesList" value={form.category} onChange={e => setForm(f=>({...f,category:e.target.value}))} placeholder="Select or type category..." />
+              <datalist id="galleryCategoriesList">
+                {['CORPORATE','AWARDS','CELEBRITY','CONCERT','LAUNCH','FASHION','CUSTOM'].map(c=><option key={c} value={c} />)}
+              </datalist>
             </div>
             <div style={{ gridColumn:'1/-1' }}>
               <ImageUploadField 
