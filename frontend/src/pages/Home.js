@@ -179,18 +179,10 @@ const Home = () => {
   const { upcomingEvents, recentEvents } = useEvents();
   const [gallery, setGallery] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
-  const [videoUrl, setVideoUrl] = useState('');
 
   useEffect(() => {
     publicApi.getGallery().then(r => setGallery(Array.isArray(r.data) ? r.data.slice(0, 6) : [])).catch(() => {});
     publicApi.getTestimonials().then(r => setTestimonials(Array.isArray(r.data) ? r.data.slice(0, 3) : [])).catch(() => {});
-    publicApi.getSettings().then(r => {
-      const v = r.data?.find(s => s.settingKey === 'promo_video_url');
-      if (v) setVideoUrl(v.settingValue);
-      else setVideoUrl('https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1');
-    }).catch(() => {
-      setVideoUrl('https://www.youtube.com/embed/jNQXAC9IVRw?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1');
-    });
   }, []);
 
   return (
