@@ -89,15 +89,9 @@ npm run build
 
 ---
 
-## 🔐 Admin Login
+## 🔐 Authentication
 
-Default credentials:
-- **Username**: `admin`
-- **Password**: `admin123`
-
-> Admin panel is at: http://localhost:3000/admin/login
-
----
+The admin panel uses JWT-based authentication. Configure administrator credentials securely in the backend environment or application configuration before deployment. Do not commit real passwords, API keys, or production secrets to the repository.
 
 ## ✨ Features
 
@@ -167,10 +161,7 @@ Default credentials:
 
 ## 📧 Contact
 
-Eagle Entertainment  
-📍 123 Event Plaza, Gandhipuram, Coimbatore – 641 012  
-📞 +91 98765 43210  
-✉️ events@eagleentertainment.com
+Configure the organization's verified contact details in the application before deploying the website. The repository README intentionally avoids publishing placeholder contact information.
 
 ---
 
